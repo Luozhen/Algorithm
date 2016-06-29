@@ -17,26 +17,26 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 class Solution(object):
     def rightSideView(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
-        result = []
-        if root:
-            result.append(root.val)
-            p = root.right; q = root
-            flag = True
-            while p or flag:
-                if p:
-                    result.append(p.val)
-                    flag = False
-                elif not p and q.left:
-                    p = q.left
-                    result.append(p.val)
-                    flag = True
-                else:
-                    flag = False
-                p = p.right
-        return result
+        valList = [];
+        nodeList = []
+        if not root:
+            return valList
+        nodeList.append(root)
+        while nodeList:
+            tmpList = nodeList
+            for i in range(len(tmpList)):
+                ele = nodeList.pop(0)
+                if ele.left:
+                    nodeList.append(ele.left)
+                if ele.right:
+                    nodeList.append(ele.right)
+            valList.append(ele.val)
+        return valList
+
