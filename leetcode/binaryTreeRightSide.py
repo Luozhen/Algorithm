@@ -36,6 +36,7 @@ class Solution(object):
         # collect(root, 0)
         # return view
 
+        # tihis my solution with WFS
         valList = []; nodeList = []
         if not root:
             return valList
