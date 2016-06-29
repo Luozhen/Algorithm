@@ -24,8 +24,19 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        valList = [];
-        nodeList = []
+        # this is DFS-tree solution( using recursive )
+        # def collect(node, depth):
+        #     if node:
+        #         if depth == len(view):
+        #             view.append(node.val)
+        #         collect(node.right, depth + 1)
+        #         collect(node.left, depth + 1)
+        #
+        # view = []
+        # collect(root, 0)
+        # return view
+
+        valList = []; nodeList = []
         if not root:
             return valList
         nodeList.append(root)
